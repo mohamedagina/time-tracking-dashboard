@@ -1,6 +1,6 @@
 import tasks from '../util/data.json' assert { type: 'json' };
 
-let timeFrame = 'weekly';
+const timeFrame = location.search.substring(1) || 'weekly';
 
 const tasksContainer = document.createElement('div');
 tasksContainer.classList.add('tasks-container');
