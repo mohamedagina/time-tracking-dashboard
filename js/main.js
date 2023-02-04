@@ -28,8 +28,11 @@ const taskCards = tasks
           </span>
 
           <span class="previous-hours">
-          last
-            ${timeFrame === 'daily' ? 'yesterday' : timeFrame.replace('ly', '')}
+            ${
+              timeFrame === 'daily'
+                ? 'yesterday'
+                : 'last ' + timeFrame.replace('ly', '')
+            }
             - ${task.timeframes[timeFrame].previous}hrs
         </div>
       </div> 
