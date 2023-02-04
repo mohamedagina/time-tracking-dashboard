@@ -15,9 +15,43 @@
       href="./images/favicon-32x32.png"
     />
 
-    <link src="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script type="module" src="js/main.js" defer></script>
 
     <title>Time tracking dashboard</title>
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <header class="app-header">
+        <article class="user-info">
+          <img
+            class="profile-picture"
+            src="images/image-jeremy.png"
+            alt="Jeremy"
+          />
+
+          <span class="sub-text">report for</span>
+          <h1 class="user-name">Jeremy Robson</h1>
+        </article>
+
+        <nav class="app-nav">
+          <a href="?daily">daily</a>
+          <a href="?weekly">weekly</a>
+          <a href="?monthly">monthly</a>
+        </nav>
+      </header>
+
+      <main>
+        <!--task cards will be created using js-->
+      </main>
+    </div>
+  </body>
 </html>
