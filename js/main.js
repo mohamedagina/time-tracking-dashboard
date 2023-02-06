@@ -1,15 +1,16 @@
-import tasks from '../util/data.json' assert { type: 'json' };
-
 const timeFrame = location.search.substring(1) || 'weekly';
 
 document
   .querySelector(`.app-nav > a[data-time-frame=${timeFrame}]`)
   .classList.add('active');
 
-const taskCards = tasks
-  .map(
-    task =>
-      `
+fetch('../util/data.json')
+  .then(res => res.json())
+  .then(tasks => {
+    const taskCards = tasks
+      .map(
+        task =>
+          `
     <div
       class="task-card ${task.title.toLowerCase().replaceAll(' ', '-')}"
       style ="background-image: url('${task.icon}')">
@@ -38,7 +39,8 @@ const taskCards = tasks
       </div> 
     </div>
     `
-  )
-  .join('');
+      )
+      .join('');
 
-document.querySelector('.dashboard').innerHTML += taskCards;
+    document.querySelector('.dashboard').innerHTML += taskCards;
+  });
